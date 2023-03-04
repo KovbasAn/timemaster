@@ -5,9 +5,7 @@ const connStr = "mongodb+srv://timemaster:iM6T4q6TYIRfrSso@cluster0.at41eaj.mong
 const options = { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 };
 global.client = new MongoClient(connStr, options);
 
-client.connect(err => {
-  if (err) console.log(err)
-
+client.connect().then(() => {
   global.collection = client.db("test").collection("devices");
 
   // perform actions on the collection object
@@ -19,4 +17,4 @@ client.connect(err => {
   ]);
 
   client.close();
-});
+}).catch(console.log);
