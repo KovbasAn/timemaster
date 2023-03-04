@@ -1,0 +1,24 @@
+{
+  "name": "timemaster",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KovbasAn/timemaster.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KovbasAn/timemaster/issues"
+  },
+  "homepage": "https://github.com/KovbasAn/timemaster#readme",
+  "dependencies": {
+    "mongodb": "^5.1.0"
+  }
+}
