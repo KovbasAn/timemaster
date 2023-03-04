@@ -1,0 +1,1 @@
+timeBtn.onclick = () => fetch('/timestamp') 

@@ -1,10 +1,7 @@
 const connectToMongo = require('./connect.js')
-const addTimestampTo = require('./timestamp.js')
+const runServer = require('./server.js')
+const endpointDict = require('./endpoints.js')
 
-connectToMongo().then(timestampCollection => {
-  const timerID = setInterval(() => {
-    addTimestampTo(timestampCollection)
-  }, 3000)
-
-  setTimeout(clearInterval, 10000, timerID)
-}).catch(console.log)
+connectToMongo().then(runServer(endpointDict)).then(
+  url => console.log('Server started at ' + url)
+)
