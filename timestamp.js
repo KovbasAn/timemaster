@@ -2,8 +2,8 @@ const { Timestamp } = require('mongodb')
 
 module.exports = { addTimestampTo, getTimestampsFrom }
 
-async function addTimestampTo(collection) {
-  await collection.insertOne({ ts: new Timestamp })
+async function addTimestampTo(collection, record) {
+  await collection.insertOne({ ts: new Timestamp, event: record.event?.slice(0, 100) })
 }
 
 async function getTimestampsFrom(collection) {

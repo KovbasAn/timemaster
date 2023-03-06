@@ -1,3 +1,5 @@
 body {
   background: linen;
+  text-align: center;
+  padding-top: calc(50vh - 10px);
 }

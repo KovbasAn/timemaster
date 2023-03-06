@@ -1,8 +1,8 @@
 const { addTimestampTo, getTimestampsFrom } = require("./timestamp")
 
 module.exports = {
-  '/timestamp': (collection) => {
-    addTimestampTo(collection)
+  '/timestamp': (collection, request) => {
+    request.on('data', chunk => addTimestampTo(collection, JSON.parse(chunk)))
   },
 
   '/timestamps': async (collection, response) => {

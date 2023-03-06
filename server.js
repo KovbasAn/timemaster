@@ -19,7 +19,7 @@ function runServer(endpointDict) {
       const { url } = request
 
       if (url in endpointDict) {
-        endpointDict[url](collection, response)
+        endpointDict[url](collection, request, response)
       } else {
         try {
           const path = url.slice(1) || 'index.html'
